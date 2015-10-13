@@ -119,6 +119,9 @@
  *
  *  @see autoRefresh
  */
+ 
+ - (void)addRequstToQueue:(NSBlockOperation *)request;
+ 
 - (void)refreshMapView;
 
 - (void)preformNetworkRequest:(MKCoordinateRegion)region;

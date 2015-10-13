@@ -426,6 +426,11 @@ static NSString * const ABFAnnotationViewReuseId = @"ABFAnnotationViewReuseId";
     
 }
 
+- (void)addRequstToQueue:(NSBlockOperation *)request
+{
+    [self.mapQueue addOperation:request];
+}
+
 #pragma mark - Public Instance
 
 - (void)refreshMapView
