@@ -419,6 +419,13 @@ static NSString * const ABFAnnotationViewReuseId = @"ABFAnnotationViewReuseId";
     return [RLMRealmConfiguration defaultConfiguration];
 }
 
+
+- (void)preformNetworkRequest:(MKCoordinateRegion)region
+{
+    
+    
+}
+
 #pragma mark - Public Instance
 
 - (void)refreshMapView
@@ -453,6 +460,9 @@ static NSString * const ABFAnnotationViewReuseId = @"ABFAnnotationViewReuseId";
                 [weakSelf.fetchResultsController performClusteringFetchForVisibleMapRect:visibleMapRect
                                                                                zoomScale:zoomScale];
                 
+                if (weakSelf.fetchResultsController.annotations.count == 0) {
+                    [self preformNetworkRequest:currentRegion];
+                }
                 [weakSelf addAnnotationsToMapView:weakSelf.fetchResultsController.annotations];
             }];
         }

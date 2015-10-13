@@ -116,4 +116,6 @@
  */
 - (void)refreshMapView;
 
+- (void)preformNetworkRequest:(MKCoordinateRegion)region;
+
 @end
