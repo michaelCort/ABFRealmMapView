@@ -108,6 +108,11 @@
                           longitudeKeyPath:(nonnull NSString *)longitudeKeyPath
                               titleKeypath:(nonnull NSString *)titleKeyPath
                            subtitleKeyPath:(nonnull NSString *)subtitleKeyPath;
+                           
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation;
+
+- (void)commonInit;
+
 
 /**
  *  Performs a fresh fetch for Realm objects based on the current visible map rect
